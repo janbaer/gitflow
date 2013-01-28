@@ -17,9 +17,9 @@ This document describes the installation and usage of gitflow at **CHECK24**
 ## Installation
 
 * Copy the files *optgen.exe* and *libint3.exe* from the *optgen* subdirectory to the bin folder of your git installation path
-* Your Git directory should be in the *PATH* evironment variable
+* Your Git-Bin directory should be in the *PATH* evironment variable
 * cd gitflow
-* *contrib\msysgit-install.cmd "{Path to you git-installation-folder}"*
+* *contrib\msysgit-install.cmd "{Path to your git-installation-folder}"*
 
 ## Initialization (Empty repository)
 
@@ -31,23 +31,30 @@ This document describes the installation and usage of gitflow at **CHECK24**
 	* Release branches: *qa*
 	* Support branches: *support*/
 	* Hotfix branches: *hotfix/*
-* *git push orgin --all*
+* *git push origin --all*
 
 ## Initialization (With clone from server)
-* *git clone http://jan.baer@localhost:8080/scm/git/flowtest/ -o origin -b main*
-* 
+* *git clone http://jan.baer@localhost:8080/scm/git/gitflowtest/ -b main -o origin* (Die Angabe von origin ist optional)
+* Wenn release lokal benötigt wird: *git remote set-branches origin release release --add*
+* *git flow init*
+	* Production releases: *release*
+	* Next release *main*
+	* Feature branches: *feature/*
+	* Release branches: *qa*
+	* Support branches: *support*/
+	* Hotfix branches: *hotfix/*
 
 ## Workflow - NewFeature
 
 1. Start feature with: *git flow feature start **MYFEATURE***
 2. Add changes to Index: *git add .*
-3. Commit the changes to current: *git commit -m "Bla bla"*
-4. Finish feature with: *git flow feature finish **MYFEATURE***
+3. Commit the changes to current: *git commit -m "My changes for the new feature*
+4. Finish feature with: *git flow feature finish*
 
 ## Workflow - NewFeature with Rebase
 1. Start feature with: *git flow feature start **MYFEATURE***
 2. Add changes to Index: *git add .*
-3. Commit the changes to current: *git commit -m "Bla bla"*
+3. Commit the changes to current: *git commit -m "My changes for the new feature"*
 4. Try to rebase with *Main*: *git flow feature rebase*
 4. Finish feature with: *git flow feature finish*
 
