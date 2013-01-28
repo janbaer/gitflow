@@ -2,6 +2,8 @@
 
 This document describes the installation and usage of gitflow at **CHECK24**
 
+- Version: 2
+
 ## External links
 * [GitFlow on Github](https://github.com/nvie/gitflow)
 * [GitFlow on Github (Forked janbaer)](https://github.com/janbaer/gitflow)
@@ -11,12 +13,11 @@ This document describes the installation and usage of gitflow at **CHECK24**
 * [A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model/)
 * [Video on Vimeo](http://vimeo.com/16018419)
 * [Video Using Git-Flow to Relieve Your Headaches](http://www.youtube.com/watch?v=NdXhz4rt_sQ)
-
 * [Poshgit with GitFlow integration](https://github.com/janbaer/posh-git)
 
 ## Installation
 
-* Copy the files *optgen.exe* and *libint3.exe* from the *optgen* subdirectory to the bin folder of your git installation path
+* Copy the files *optgen.exe* and *libint3.dll* from the *optgen* subdirectory to the bin folder of your git installation path
 * Your Git-Bin directory should be in the *PATH* evironment variable
 * cd gitflow
 * *contrib\msysgit-install.cmd "{Path to your git-installation-folder}"*
@@ -43,6 +44,12 @@ This document describes the installation and usage of gitflow at **CHECK24**
 	* Release branches: *qa*
 	* Support branches: *support*/
 	* Hotfix branches: *hotfix/*
+
+## Add aliases for the most used commands
+* *git config –-global --add alias.pom "push origin master"*
+* *git config –-global --add alias.ffs "flow feature start"*
+* *git config –-global --add alias.ffr "flow feature rebase"*
+* *git config –-global --add alias.fff "flow feature finish"*
 
 ## Workflow - NewFeature
 
